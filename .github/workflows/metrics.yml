@@ -1,0 +1,26 @@
+name: Metrics
+on:
+  # 毎日0時に自動更新（UTC）
+  schedule: [{cron: "0 0 * * *"}]
+  # 手動でもトリガー可能
+  workflow_dispatch:
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      repository-projects: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # GitHubトークン（必須。classic tokenでrepo scope）
+          token: ${{ secrets.METRICS_TOKEN }}
+          # 出力先フォルダ（例: metrics）
+          committer_branch: main
+          committer_message: "chore(metrics): update metrics"
+          # ここで出力したいプラグインを設定（languagesは言語統計）
+          plugin_languages: yes
+          plugin_languages_colors: github
+          plugin_languages_threshold: 0.5%  # 5%以上だけ表示など調整可
