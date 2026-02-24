@@ -15,12 +15,11 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # GitHubトークン（必須。classic tokenでrepo scope）
           token: ${{ secrets.METRICS_TOKEN }}
-          # 出力先フォルダ（例: metrics）
           committer_branch: main
           committer_message: "chore(metrics): update metrics"
-          # ここで出力したいプラグインを設定（languagesは言語統計）
+          base: "" # 言語グラフだけに絞るならこれ
           plugin_languages: yes
+          plugin_languages_details: percentage # %を表示
           plugin_languages_colors: github
-          plugin_languages_threshold: 0.5%  # 5%以上だけ表示など調整可
+          plugin_languages_threshold: 0% # 全言語出したいなら0%
