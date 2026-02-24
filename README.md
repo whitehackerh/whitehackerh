@@ -1,4 +1,4 @@
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=whitehackerh&layout=pie)](https://github.com/anuraghazra/github-readme-stats)
+<!-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=whitehackerh&layout=pie)](https://github.com/anuraghazra/github-readme-stats) -->
 ![My GitHub Metrics](https://raw.githubusercontent.com/whitehackerh/whitehackerh/metrics-renders/github-metrics.svg)
 
 <!--
